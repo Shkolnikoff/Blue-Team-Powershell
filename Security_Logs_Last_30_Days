@@ -1,0 +1,7 @@
+# This will pull the last 30 days 
+# of Security Event Logs and export
+# a .csv file to C:\ named 
+# SecurityEventLogs_Last30Days.csv
+
+Get-Eventlog -LogName Security -After ((Get-Date).Date.AddDays(-30)) | 
+Export-Csv c:\SecurityEventLogs_Last30Days.csv
